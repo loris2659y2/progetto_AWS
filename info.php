@@ -11,6 +11,9 @@
 
     <style>
         body {
+            background: linear-gradient(to bottom, #a24caf, #008CBA);    
+            background-repeat: no-repeat;
+            min-height: 100vh; 
             font-family: Arial, sans-serif;
             margin: 2rem;
             line-height: 1.5;

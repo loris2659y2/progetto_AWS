@@ -9,7 +9,12 @@
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #a24caf, #008CBA);    
+            background-repeat: no-repeat;
+            min-height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
         }
 
         .login-form {
@@ -22,33 +27,34 @@
         }
 
         .login-form h2 {
-            margin-bottom: 30px;
+            margin-bottom: 30px
+            ;
+        }
+        .login-form button[type="submit"] {
+            background-color: #008CBA; 
+            border-color: #008CBA; 
+        }
+
+        .login-form button[type="submit"]:hover {
+            background-color: #a24caf; 
+            border-color: #a24caf; 
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form class="login-form" action="login.php" method="post">
-                    <h2 class="text-center">Login</h2>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="required">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Invia</button>
-                    </div>
-                </form>
+        <form class="login-form" action="login.php" method="post">
+            <h2 class="text-center">Login</h2>
+            <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="required">
             </div>
-        </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Invia</button>
+            </div>
+        </form>
     </div>
-
-    <!-- Bootstrap JS and jQuery (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
