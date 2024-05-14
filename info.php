@@ -59,7 +59,7 @@ services:
             <p><i class="fas fa-check-circle text-success mr-2"></i>Create a directory for your PHP code inside your project <code>mkdir ~/docker-project/php_code</code></p>
             <p><i class="fas fa-check-circle text-success mr-2"></i>Clone your PHP code into the <code>php_code</code> directory. For example:</p>
             <pre><code>
-            git clone https://github.com/loris2659y2/progetto_AWS ~/docker-project/php_code/
+git clone https://github.com/loris2659y2/progetto_AWS ~/docker-project/php_code/
             </code></pre>
             <p><i class="fas fa-check-circle text-success mr-2"></i>Create a <code>Dockerfile</code> for the PHP container <code>nano ~/docker-project/php_code/Dockerfile</code> and add:</p>
             <pre><code>
