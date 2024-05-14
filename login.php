@@ -7,7 +7,6 @@ session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$password = md5($password);
 $email=filter_var($email, FILTER_SANITIZE_EMAIL);
 
 $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
