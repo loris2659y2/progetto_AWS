@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     $_SESSION['email'] = $email;
     header("Location: ../pages/info.php");
 } else {
-    $_SESSION['error_message'] = "Credenziali errate. Riprova";
+    $_SESSION['error_message'] = "Non hai i permessi per visualizzare questa pagina";
     header("Location: ../pages/login.php");
 }
 $conn->close();
