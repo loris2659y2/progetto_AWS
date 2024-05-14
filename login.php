@@ -16,7 +16,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
     $_SESSION['logged'] = true;
     $_SESSION['email'] = $email;
-    header("Location: ../pages/info.php");
+    header("Location: info.php");
 } else {
     $_SESSION['error_message'] = "Non hai i permessi per visualizzare questa pagina";
     header("Location: ../pages/login.php");
