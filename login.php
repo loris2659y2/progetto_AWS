@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     header("Location: info.php");
 } else {
     $_SESSION['error_message'] = "Non hai i permessi per visualizzare questa pagina";
-    header("Location: login.php");
+    header("Location: index.html");
 }
 $conn->close();
 
