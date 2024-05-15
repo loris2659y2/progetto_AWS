@@ -53,6 +53,25 @@ services:
       ports:
        - 80:80
             </code></pre>
+            <p><i class="fas fa-check-circle text-success mr-2"></i>Create a directory for the certificates: <code> mkdir ~/ssl </code></p>
+            <p><i class="fas fa-check-circle text-success mr-2"></i>Generate self signed certificates: 
+            <pre><code>
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ~/ssl/key.pem -out ~/ssl/cert.pem
+            </code></pre>
+            <br> Then enter the necessary informations:</p>
+            <pre><code>
+Country Name (2 letter code) [AU]:IT
+State or Province Name (full name) [Some-State]:Lombardia
+Locality Name (eg, city) []:Legnano
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:ISIS Bernocchi
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []: Loris Agazzi
+Email Address []:gzzlrs05h21e514w@isisbernocchi.edu.it
+            </code></pre>
+            <p><i class="fas fa-check-circle text-success mr-2"></i>To connect the certificate to the nginx container: </p>
+            <pre><code>
+sudo docker run -d --name proxyapp --network docker-project_default -p 443:443 -e DOMAIN=*.compute-1.amazonaws.com -e TARGET_PORT=80 -e TARGET_HOST=docker-project-nginx-1 -e SSL_PORT=443 -v ~/ssl:/etc/nginx/certs --restart unless-stopped fsouza/docker-ssl-proxy
+            </code></pre>
             <p><i class="fas fa-check-circle text-success mr-2"></i>Launch the Nginx container: <code>docker-compose up -d</code></p>
             <p><i class="fas fa-check-circle text-success mr-2"></i>Verify that the Nginx container is running: <code>sudo docker ps</code></p>
         </div>
